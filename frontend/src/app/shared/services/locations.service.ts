@@ -11,15 +11,13 @@ export class LocationsService {
     private httpClient: HttpClient
   ) { }
 
-  private apiUrl = 'http://localhost:3000';
-
   getLocations(): Observable<any> {
-    const URL = `${this.apiUrl}/api/locations`
+    const URL = `/api/locations`
     return this.httpClient.get(URL);
   }
 
   getLocation(locationId: String): Observable<any> {
-    const URL = `${this.apiUrl}/api/locations/${locationId}`
+    const URL = `/api/locations/${locationId}`
     return this.httpClient.get(URL);
   }
 }
